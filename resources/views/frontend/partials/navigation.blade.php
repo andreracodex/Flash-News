@@ -11,7 +11,7 @@
             <div class="navbar-nav mr-auto py-0">
                 <a href="index.html" class="nav-item nav-link active">Home</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Category</a>
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Kategori</a>
                     <div class="dropdown-menu rounded-0 m-0">
                         @foreach ($category as $cat)
                             <a href="{{ strtolower(URL::to($cat->nama_categories)) }}" class="dropdown-item">{{$cat->nama_categories}}</a>

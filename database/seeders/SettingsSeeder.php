@@ -135,7 +135,7 @@ class SettingsSeeder extends Seeder
             ),
             array(
                 'name' => "company_address",
-                'value' => 'Jl. Dinoyo',
+                'value' => 'Jl. Harpan Menjadi Muda',
                 'created_by' => 1,
             ),
             array(
@@ -165,12 +165,12 @@ class SettingsSeeder extends Seeder
             ),
             array(
                 'name' => "company_email",
-                'value' => 'admin@gnet.co.id',
+                'value' => 'admin@flashnews.id',
                 'created_by' => 1,
             ),
             array(
                 'name' => "company_email_from_name",
-                'value' => 'admin@gnet.co.id',
+                'value' => 'notif@flashnews.id',
                 'created_by' => 1,
             ),
             array(
