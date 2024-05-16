@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
+use App\Models\Kabupaten;
+use App\Models\Kota;
 use App\Models\Settings;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -246,12 +248,145 @@ class SettingsSeeder extends Seeder
 
         Category::insert(array(
             array(
-                'nama_categories' => "company_logo",
+                'nama_categories' => "Politik",
                 'created_by' => 1,
             ),
             array(
-                'nama_categories' => "company_logo_dark",
+                'nama_categories' => "Hukum",
                 'created_by' => 1,
+            ),
+            array(
+                'nama_categories' => "Ekonomi",
+                'created_by' => 1,
+            ),
+            array(
+                'nama_categories' => "Olahraga",
+                'created_by' => 1,
+            ),
+            array(
+                'nama_categories' => "Gaya Hidup",
+                'created_by' => 1,
+            ),
+            array(
+                'nama_categories' => "Hiburan",
+                'created_by' => 1,
+            ),
+            array(
+                'nama_categories' => "Kesehatan",
+                'created_by' => 1,
+            ),
+            array(
+                'nama_categories' => "Teknologi",
+                'created_by' => 1,
+            ),
+            array(
+                'nama_categories' => "Pariwisata",
+                'created_by' => 1,
+            ),
+            array(
+                'nama_categories' => "Peristiwa",
+                'created_by' => 1,
+            ),
+        ));
+
+        Kabupaten::insert(array(
+            array(
+                'nama' => 'Kabupaten Tanah Datar',
+                'jenis' => 'Kabupaten',
+                'is_active' => 1,
+            ),
+            array(
+                'nama' => 'Kabupaten Agam',
+                'jenis' => 'Kabupaten',
+                'is_active' => 1,
+            ),
+            array(
+                'nama' => 'Kabupaten Lima Puluh Kota',
+                'jenis' => 'Kabupaten',
+                'is_active' => 1,
+            ),
+            array(
+                'nama' => 'Kabupaten Padang Pariaman',
+                'jenis' => 'Kabupaten',
+                'is_active' => 1,
+            ),
+            array(
+                'nama' => 'Kabupaten Pasaman Barat',
+                'jenis' => 'Kabupaten',
+                'is_active' => 1,
+            ),
+            array(
+                'nama' => 'Kabupaten Pasaman',
+                'jenis' => 'Kabupaten',
+                'is_active' => 1,
+            ),
+            array(
+                'nama' => 'Kabupaten Pesisir Selatan',
+                'jenis' => 'Kabupaten',
+                'is_active' => 1,
+            ),
+            array(
+                'nama' => 'Kabupaten Solok',
+                'jenis' => 'Kabupaten',
+                'is_active' => 1,
+            ),
+            array(
+                'nama' => 'Kabupaten Wok Selatan',
+                'jenis' => 'Kabupaten',
+                'is_active' => 1,
+            ),
+            array(
+                'nama' => 'Kabupaten Sijunjung',
+                'jenis' => 'Kabupaten',
+                'is_active' => 1,
+            ),
+            array(
+                'nama' => 'Kabupaten Dharmasraya',
+                'jenis' => 'Kabupaten',
+                'is_active' => 1,
+            ),
+            array(
+                'nama' => 'Kabupaten Mentawai',
+                'jenis' => 'Kabupaten',
+                'is_active' => 1,
+            )
+        ));
+
+        Kabupaten::insert(array(
+            array(
+                'nama' => 'Kota Padang',
+                'jenis' => 'Kota',
+                'is_active' => 1,
+            ),
+            array(
+                'nama' => 'Kota Bukit Tinggi',
+                'jenis' => 'Kota',
+                'is_active' => 1,
+            ),
+            array(
+                'nama' => 'Kota Payakumbuh',
+                'jenis' => 'Kota',
+                'is_active' => 1,
+            ),
+            array(
+                'nama' => 'Kota Padang Panjang',
+                'jenis' => 'Kota',
+                'is_active' => 1,
+            ),
+            array(
+                'nama' => 'Kota Pariaman',
+                'jenis' => 'Kota',
+                'is_active' => 1,
+            ),
+            array(
+                'nama' => 'Kota Solok',
+                'jenis' => 'Kota',
+                'is_active' => 1,
+            ),
+            array(
+                'nama' => 'Kota Sawahlunto',
+                'jenis' => 'Kota',
+                'is_active' => 1,
             ),
         ));
     }

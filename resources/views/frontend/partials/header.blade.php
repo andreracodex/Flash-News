@@ -12,13 +12,22 @@
                             </a>
                     </li>
                     <li class="nav-item border-right border-secondary">
-                        <a class="nav-link text-body small" href="{{ route('adv') }}">Advertise</a>
+                        <a class="nav-link text-body small" href="{{ route('adv') }}">Tentang Kami</a>
                     </li>
                     <li class="nav-item border-right border-secondary">
-                        <a class="nav-link text-body small" href="{{ route('contact') }}">Contact</a>
+                        <a class="nav-link text-body small" href="{{ route('adv') }}">Redaksi</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-body small" href="{{ route('login') }}">Login</a>
+                    <li class="nav-item border-right border-secondary">
+                        <a class="nav-link text-body small" href="{{ route('adv') }}">Info Iklan</a>
+                    </li>
+                    <li class="nav-item border-right border-secondary">
+                        <a class="nav-link text-body small" href="{{ route('adv') }}">Ketentuan Khusus</a>
+                    </li>
+                    <li class="nav-item border-right border-secondary">
+                        <a class="nav-link text-body small" href="{{ route('adv') }}">Pedoman Media Siber</a>
+                    </li>
+                    <li class="nav-item border-right border-secondary">
+                        <a class="nav-link text-body small" href="{{ route('contact') }}">Hubungi Kami</a>
                     </li>
                 </ul>
             </nav>
@@ -32,17 +41,23 @@
                     <li class="nav-item">
                         <a class="nav-link text-body" href="#"><small class="fab fa-facebook-f"></small></a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link text-body" href="#"><small class="fab fa-linkedin-in"></small></a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link text-body" href="#"><small class="fab fa-instagram"></small></a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link text-body" href="#"><small class="fab fa-google-plus-g"></small></a>
+                    </li> --}}
+                    <li class="nav-item">
+                        <a class="nav-link text-body border-right border-secondary" href="#"><small class="fab fa-youtube"></small></a>
+                    </li>
+                    <li class="nav-item border-right border-secondary">
+                        <a class="nav-link text-body small" href="{{ route('login') }}">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-body" href="#"><small class="fab fa-youtube"></small></a>
+                        <a class="nav-link text-body small" href="{{ route('login') }}">Register</a>
                     </li>
                 </ul>
             </nav>

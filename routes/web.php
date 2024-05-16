@@ -4,11 +4,7 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('frontend.front');
-});
-
-
+Route::get('/', [FrontendController::class, 'frontend']);
 Route::get('/adv', [FrontendController::class, 'index'])->name('adv');
 Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
 

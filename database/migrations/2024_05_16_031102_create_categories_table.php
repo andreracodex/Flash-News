@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_categories');
             $table->string('created_by');
+            $table->integer('is_active')->default(1);
             $table->timestamps();
             $table->softDeletes();
         });
