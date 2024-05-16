@@ -12,5 +12,6 @@ class Settings extends Model
     protected $fillable = [
         'name',
         'value',
+        'created_by'
     ];
 }

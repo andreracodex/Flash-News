@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
+use App\Models\Settings;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +14,245 @@ class SettingsSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+
+        Settings::insert(array(
+            array(
+                'name' => "company_logo",
+                'value' => '/images/logo.png',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "company_logo_dark",
+                'value' => '/images/logo-dark.png',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "company_favicon",
+                'value' => '/images/favicon.ico',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "company_sidebar_logo",
+                'value' => '/images/logo.png',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "company_sidebar_logo_dark",
+                'value' =>  '/images/logo-dark.png',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "title_text",
+                'value' => 'GNet',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "subtitle_text",
+                'value' => 'Portal Berita Kesayangan Kamu',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "site_currency",
+                'value' => 'IDR',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "site_currency_symbol",
+                'value' => 'Rp',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "site_currency_symbol_position",
+                'value' => ' ',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "site_date_format",
+                'value' => ' ',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "site_time_format",
+                'value' => ' ',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "invoice_prefix",
+                'value' => ' ',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "proposal_prefix",
+                'value' => ' ',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "bill_prefix",
+                'value' => ' ',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "customer_prefix",
+                'value' => ' ',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "vendor_prefix",
+                'value' => ' ',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "journal_prefix",
+                'value' => ' ',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "footer_title_notes",
+                'value' => '',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "footer_title_notes_2",
+                'value' => ' ',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "decimal_number",
+                'value' => ' ',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "shipping_display",
+                'value' => ' ',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "company_name",
+                'value' => 'PT. Flash News',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "company_address",
+                'value' => 'Jl. Dinoyo',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "company_city",
+                'value' => 'Surabaya',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "company_state",
+                'value' => 'Jawa Timur',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "company_zipcode",
+                'value' => '60265',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "company_country",
+                'value' => 'Indonesia',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "company_telephone",
+                'value' => '(+62)857 3177 0730',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "company_email",
+                'value' => 'admin@gnet.co.id',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "company_email_from_name",
+                'value' => 'admin@gnet.co.id',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "registration_number",
+                'value' => ' ',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "tax_type",
+                'value' => 'enabled',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "tax_fee",
+                'value' => 11, // Nilai besaran pajak
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "tax_tempo_date",
+                'value' => 20, // Tanggal jatuh tempo tagihan
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "tax_date_line",
+                'value' => 2, // Tagihan dibuat sebelum hari
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "isolir",
+                'value' => 1, // Default = 0 Tidak Aktif, 1 = Aktif
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "vat_number",
+                'value' => ' ',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "display_landing_page",
+                'value' => ' ',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "title_text_option",
+                'value' => 'PT. Flash News',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "footer_text_option",
+                'value' => 'PT. Flash News',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "default_language",
+                'value' => 'id',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "meta_description",
+                'value' => 'PT. Flash News - Portal Berita Kesayangan Kamu',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "meta_keywords",
+                'value' => 'news, global, elite, network, isp, anchor, breakingnews,',
+                'created_by' => 1,
+            ),
+            array(
+                'name' => "foot_note_remarks",
+                'value' => 'https://berdikari.web.id',
+                'created_by' => 1,
+            ),
+
+        ));
+
+        Category::insert(array(
+            array(
+                'nama_categories' => "company_logo",
+                'created_by' => 1,
+            ),
+            array(
+                'nama_categories' => "company_logo_dark",
+                'created_by' => 1,
+            ),
+        ));
     }
 }

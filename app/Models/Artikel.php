@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Artikel extends Model
 {
     use HasFactory;
+    protected $table = 'tb_artikels';
 }

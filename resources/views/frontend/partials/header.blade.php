@@ -54,9 +54,9 @@
                 <h1 class="m-0 display-4 text-uppercase text-primary">Flash<span class="text-secondary font-weight-normal">News</span></h1>
             </a>
         </div>
-        {{-- <div class="col-lg-8 text-center text-lg-right">
-            <a href="https://htmlcodex.com"><img class="img-fluid" src="img/ads-728x90.png" alt=""></a>
-        </div> --}}
+        <div class="col-lg-8 text-center text-lg-right">
+            <a href="https://berdikari.web.id"><img class="img-fluid" src="img/ads-728x90.png" alt=""></a>
+        </div>
     </div>
 </div>
 <!-- Topbar End -->
