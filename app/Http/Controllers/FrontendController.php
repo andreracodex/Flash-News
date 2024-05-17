@@ -15,6 +15,22 @@ class FrontendController extends Controller
         $category = Category::where('is_active', 1)->get();
         $kab = Kabupaten::where('is_active', 1)->where('jenis','=', 'Kabupaten')->get();
         $kota = Kabupaten::where('is_active', 1)->where('jenis','=', 'Kota')->get();
-        return view('frontend.front', compact('settings', 'category', 'kab', 'kota'));
+        return view('frontend.pages.content', compact('settings', 'category', 'kab', 'kota'));
+    }
+
+    public function contact(Request $request){
+        $settings = Settings::all();
+        $category = Category::where('is_active', 1)->get();
+        $kab = Kabupaten::where('is_active', 1)->where('jenis','=', 'Kabupaten')->get();
+        $kota = Kabupaten::where('is_active', 1)->where('jenis','=', 'Kota')->get();
+        return view('frontend.pages.contact', compact('settings', 'category', 'kab', 'kota'));
+    }
+
+    public function category(Request $request){
+        $settings = Settings::all();
+        $category = Category::where('is_active', 1)->get();
+        $kab = Kabupaten::where('is_active', 1)->where('jenis','=', 'Kabupaten')->get();
+        $kota = Kabupaten::where('is_active', 1)->where('jenis','=', 'Kota')->get();
+        return view('frontend.pages.category', compact('settings', 'category', 'kab', 'kota'));
     }
 }

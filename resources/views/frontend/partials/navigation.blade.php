@@ -9,10 +9,11 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
             <div class="navbar-nav mr-auto py-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="{{ route('frontend') }}" class="nav-item nav-link active">Home</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Kategori</a>
                     <div class="dropdown-menu rounded-0 m-0">
+                        <a href="{{ route('kategori') }}" class="dropdown-item">All Kategori</a>
                         @foreach ($category as $cat)
                             <a href="{{ strtolower(URL::to($cat->nama_categories)) }}" class="dropdown-item">{{$cat->nama_categories}}</a>
                         @endforeach

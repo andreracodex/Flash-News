@@ -3730,7 +3730,7 @@ input[type="button"].btn-block {
     display: block;
     min-height: 1.5rem;
     padding-left: 1.5rem;
-    color-adjust: exact;
+    color-scheme: exact;
 }
 
 .custom-control-inline {

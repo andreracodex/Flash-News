@@ -78,3 +78,5 @@
     Design by <a href="https://berdikari.web.id">Berdikari.Web.Id</a></p>
 </div>
 <!-- Footer End -->
+<!-- Back to Top -->
+<a href="#" class="btn btn-primary btn-square back-to-top"><i class="fa fa-arrow-up"></i></a>
