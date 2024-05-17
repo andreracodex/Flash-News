@@ -10,7 +10,6 @@
                     </div>
                     <div class="bg-white border border-top-0 p-4 mb-3">
                         <div class="mb-4">
-                            <h6 class="text-uppercase font-weight-bold">Kontak Info</h6>
                             <b class="mb-4"></b>
                             <div class="mb-3">
                                 <div class="d-flex align-items-center mb-2">
