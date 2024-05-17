@@ -12,19 +12,19 @@
                             </a>
                     </li>
                     <li class="nav-item border-right border-secondary">
-                        <a class="nav-link text-body small" href="{{ route('adv') }}">Tentang Kami</a>
+                        <a class="nav-link text-body small" href="{{ route('tentang') }}">Tentang Kami</a>
                     </li>
                     <li class="nav-item border-right border-secondary">
-                        <a class="nav-link text-body small" href="{{ route('adv') }}">Redaksi</a>
+                        <a class="nav-link text-body small" href="{{ route('redaksi') }}">Redaksi</a>
                     </li>
                     <li class="nav-item border-right border-secondary">
-                        <a class="nav-link text-body small" href="{{ route('adv') }}">Info Iklan</a>
+                        <a class="nav-link text-body small" href="{{ route('iklan') }}">Info Iklan</a>
                     </li>
                     <li class="nav-item border-right border-secondary">
-                        <a class="nav-link text-body small" href="{{ route('adv') }}">Ketentuan Khusus</a>
+                        <a class="nav-link text-body small" href="{{ route('ketentuan') }}">Ketentuan Khusus</a>
                     </li>
                     <li class="nav-item border-right border-secondary">
-                        <a class="nav-link text-body small" href="{{ route('adv') }}">Pedoman Media Siber</a>
+                        <a class="nav-link text-body small" href="{{ route('pedoman') }}">Pedoman Media Siber</a>
                     </li>
                     <li class="nav-item border-right border-secondary">
                         <a class="nav-link text-body small" href="{{ route('contact') }}">Hubungi Kami</a>
@@ -57,7 +57,7 @@
                         <a class="nav-link text-body small" href="{{ route('login') }}">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-body small" href="{{ route('login') }}">Register</a>
+                        <a class="nav-link text-body small" href="{{ route('register') }}">Register</a>
                     </li>
                 </ul>
             </nav>

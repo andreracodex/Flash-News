@@ -5,9 +5,13 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [FrontendController::class, 'frontend'])->name('frontend');
-Route::get('/adv', [FrontendController::class, 'index'])->name('adv');
+Route::get('/iklan', [FrontendController::class, 'iklan'])->name('iklan');
 Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
 Route::get('/category', [FrontendController::class, 'category'])->name('kategori');
+Route::get('/pedoman', [FrontendController::class, 'pedoman'])->name('pedoman');
+Route::get('/tentang', [FrontendController::class, 'tentang'])->name('tentang');
+Route::get('/redaksi', [FrontendController::class, 'redaksi'])->name('redaksi');
+Route::get('/ketentuan', [FrontendController::class, 'ketentuan'])->name('ketentuan');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

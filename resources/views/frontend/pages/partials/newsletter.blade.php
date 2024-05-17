@@ -3,8 +3,8 @@
     <div class="section-title mb-0">
         <h4 class="m-0 text-uppercase font-weight-bold">Newsletter</h4>
     </div>
-    <div class="bg-white text-center border border-top-0 p-3">
-        <p>Aliqu justo et labore at eirmod justo sea erat diam dolor diam vero kasd</p>
+    <div class="bg-white text-left border border-top-0 p-3">
+        <p>Untuk berlangganan masukkan email anda</p>
         <div class="input-group mb-2" style="width: 100%;">
             <input type="text" class="form-control form-control-lg" placeholder="Your Email">
             <div class="input-group-append">

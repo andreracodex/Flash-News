@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Kabupaten;
 use App\Models\Kota;
 use App\Models\Settings;
+use App\Models\StatisPage;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -45,7 +46,7 @@ class SettingsSeeder extends Seeder
             ),
             array(
                 'name' => "title_text",
-                'value' => 'GNet',
+                'value' => 'BiNews',
                 'created_by' => 1,
             ),
             array(
@@ -130,12 +131,12 @@ class SettingsSeeder extends Seeder
             ),
             array(
                 'name' => "company_name",
-                'value' => 'PT. Flash News',
+                'value' => 'BiNews',
                 'created_by' => 1,
             ),
             array(
                 'name' => "company_address",
-                'value' => 'Jl. Harpan Menjadi Muda',
+                'value' => 'Komp. Kodam 65 Siteba - Padang Sumatera Barat',
                 'created_by' => 1,
             ),
             array(
@@ -150,7 +151,7 @@ class SettingsSeeder extends Seeder
             ),
             array(
                 'name' => "company_zipcode",
-                'value' => '60265',
+                'value' => '25146',
                 'created_by' => 1,
             ),
             array(
@@ -160,17 +161,17 @@ class SettingsSeeder extends Seeder
             ),
             array(
                 'name' => "company_telephone",
-                'value' => '(+62)857 3177 0730',
+                'value' => '(0751)38834',
                 'created_by' => 1,
             ),
             array(
                 'name' => "company_email",
-                'value' => 'admin@flashnews.id',
+                'value' => ' admin@binews.id',
                 'created_by' => 1,
             ),
             array(
                 'name' => "company_email_from_name",
-                'value' => 'notif@flashnews.id',
+                'value' => 'notif@binews.id',
                 'created_by' => 1,
             ),
             array(
@@ -215,12 +216,12 @@ class SettingsSeeder extends Seeder
             ),
             array(
                 'name' => "title_text_option",
-                'value' => 'PT. Flash News',
+                'value' => 'BiNews',
                 'created_by' => 1,
             ),
             array(
                 'name' => "footer_text_option",
-                'value' => 'PT. Flash News',
+                'value' => 'BiNews',
                 'created_by' => 1,
             ),
             array(
@@ -230,7 +231,7 @@ class SettingsSeeder extends Seeder
             ),
             array(
                 'name' => "meta_description",
-                'value' => 'PT. Flash News - Portal Berita Kesayangan Kamu',
+                'value' => 'BiNews - Berpikir Merdeka, Santun dalam Berita',
                 'created_by' => 1,
             ),
             array(
@@ -387,6 +388,29 @@ class SettingsSeeder extends Seeder
                 'nama' => 'Kota Sawahlunto',
                 'jenis' => 'Kota',
                 'is_active' => 1,
+            ),
+        ));
+
+        StatisPage::insert(array(
+            array(
+                'name_page' => "tentang",
+                'value_content' => '/images/logo.png',
+                'created_by' => 1,
+            ),
+            array(
+                'name_page' => "redaksi",
+                'value_content' => '/images/logo.png',
+                'created_by' => 1,
+            ),
+            array(
+                'name_page' => "ketentuan",
+                'value_content' => '/images/logo.png',
+                'created_by' => 1,
+            ),
+            array(
+                'name_page' => "pedoman",
+                'value_content' => '/images/logo.png',
+                'created_by' => 1,
             ),
         ));
     }

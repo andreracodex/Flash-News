@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tb_komens', function (Blueprint $table) {
+        Schema::create('tb_statis_pages', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('news_id');
-            $table->foreign('news_id')->references('id')->on('tb_beritas')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('nama');
-            $table->string('comments');
-            $table->string('is_active');
-            $table->string('created_by');
+            $table->string('name_page');
+            $table->string('value_content');
+            $table->string('created_by')->nullable();
+            $table->string('edited_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tb_komens');
+        Schema::dropIfExists('tb_statis_pages');
     }
 };

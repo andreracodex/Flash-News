@@ -80,6 +80,7 @@
                 <div class="col-lg-4">
                     @include('frontend.pages.partials.ads')
                     @include('frontend.pages.partials.popular')
+                    @include('frontend.pages.partials.galery')
                     @include('frontend.pages.partials.newsletter')
                     @include('frontend.pages.partials.tags')
                 </div>

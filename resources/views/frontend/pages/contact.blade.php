@@ -6,37 +6,35 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="section-title mb-0">
-                        <h4 class="m-0 text-uppercase font-weight-bold">Contact Us For Any Queries</h4>
+                        <h4 class="m-0 text-uppercase font-weight-bold">Hubungi Kami Untuk Pertanyaan</h4>
                     </div>
                     <div class="bg-white border border-top-0 p-4 mb-3">
                         <div class="mb-4">
-                            <h6 class="text-uppercase font-weight-bold">Contact Info</h6>
-                            <p class="mb-4">The contact form is currently inactive. Get a functional and working contact
-                                form with Ajax &amp; PHP in a few minutes. Just copy and paste the files, add a little code
-                                and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
+                            <h6 class="text-uppercase font-weight-bold">Kontak Info</h6>
+                            <b class="mb-4"></b>
                             <div class="mb-3">
                                 <div class="d-flex align-items-center mb-2">
                                     <i class="fa fa-map-marker-alt text-primary mr-2"></i>
-                                    <h6 class="font-weight-bold mb-0">Our Office</h6>
+                                    <h6 class="font-weight-bold mb-0">Kantor Kami</h6>
                                 </div>
-                                <p class="m-0">123 Street, New York, USA</p>
+                                <p class="m-0">{{ $settings[23]->value }}</p>
                             </div>
                             <div class="mb-3">
                                 <div class="d-flex align-items-center mb-2">
                                     <i class="fa fa-envelope-open text-primary mr-2"></i>
-                                    <h6 class="font-weight-bold mb-0">Email Us</h6>
+                                    <h6 class="font-weight-bold mb-0">Email</h6>
                                 </div>
-                                <p class="m-0">info@example.com</p>
+                                <p class="m-0">{{ $settings[30]->value }}</p>
                             </div>
                             <div class="mb-3">
                                 <div class="d-flex align-items-center mb-2">
                                     <i class="fa fa-phone-alt text-primary mr-2"></i>
-                                    <h6 class="font-weight-bold mb-0">Call Us</h6>
+                                    <h6 class="font-weight-bold mb-0">Narahubung Telepon</h6>
                                 </div>
-                                <p class="m-0">+012 345 6789</p>
+                                <p class="m-0">{{ $settings[28]->value }}</p>
                             </div>
                         </div>
-                        <h6 class="text-uppercase font-weight-bold mb-3">Contact Us</h6>
+                        <h6 class="text-uppercase font-weight-bold mb-3">Kontak Kami melalui Email</h6>
                         <form>
                             <div class="form-row">
                                 <div class="col-md-6">
