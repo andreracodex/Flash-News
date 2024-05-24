@@ -101,7 +101,7 @@ def get_articles():
                 "source_icon": article[13],
                 "language": article[14],
                 "country": article[15],
-                "category": article[16]
+                "category": article[17]
             }
             articles_list.append(article_dict)
 
@@ -140,7 +140,7 @@ def get_fatured():
                 "source_icon": article[13],
                 "language": article[14],
                 "country": article[15],
-                "category": article[16]
+                "category": article[17]
             }
             articles_list.append(article_dict)
 
@@ -179,7 +179,7 @@ def get_articles_by_category(category):
                 "source_icon": article[13],
                 "language": article[14],
                 "country": article[15],
-                "category": article[16]
+                "category": article[17]
             }
             category_articles_list.append(article_dict)
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Berita;
 use App\Models\Category;
 use App\Models\Kabupaten;
 use App\Models\Settings;
@@ -16,11 +17,18 @@ class FrontendController extends Controller
         $settings = Settings::all();
         $category = Category::where('is_active', 1)->get();
 
-        $articles = Http::get('http://172.18.0.5:5000/articles');
-        $all = $articles->json();
-
-        $feat = Http::get('http://172.18.0.5:5000/featured');
-        $featured = $feat->json();
+        try {
+            $articles = Http::get('http://172.18.0.5:5000/articles');
+            $all = $articles->json();
+        } catch (\Exception $e) {
+            $all = Berita::all();
+        }
+        try {
+            $feat = Http::get('http://172.18.0.5:5000/featured');
+            $featured = $feat->json();
+        } catch (\Exception $e) {
+            $featured = Berita::where('is_featured', 1)->get();
+        }
 
         $kab = Kabupaten::where('is_active', 1)->where('jenis','=', 'Kabupaten')->get();
         $kota = Kabupaten::where('is_active', 1)->where('jenis','=', 'Kota')->get();

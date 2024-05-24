@@ -6,42 +6,19 @@
         <div class="row">
             <div class="col-lg-12 px-0">
                 <div class="owl-carousel main-carousel position-relative">
+                    @foreach ($featured as $featured_item)
                     <div class="position-relative overflow-hidden" style="height: 500px;">
-                        <img class="img-fluid h-100" src="img/news-800x500-1.jpg" style="object-fit: cover;">
+                        <img class="img-fluid h-100" src="{{ $featured_item["image_url"] }}" style="object-fit: cover;">
                         <div class="overlay">
                             <div class="mb-2">
                                 <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                    href="">Business</a>
-                                <a class="text-white" href="">Jan 01, 2045</a>
+                                    href="">{{ $featured_item["category"] }}</a>
+                                <a class="text-white" href="">{{ Carbon\Carbon::parse($featured_item["pub_date"])->format('d/M/Y h:i') }}</a>
                             </div>
-                            <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="">Lorem ipsum dolor
-                                sit amet elit. Proin vitae porta diam...</a>
+                            <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="">{{ $featured_item["title"] }}</a>
                         </div>
                     </div>
-                    <div class="position-relative overflow-hidden" style="height: 500px;">
-                        <img class="img-fluid h-100" src="img/news-800x500-2.jpg" style="object-fit: cover;">
-                        <div class="overlay">
-                            <div class="mb-2">
-                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                    href="">Business</a>
-                                <a class="text-white" href="">Jan 01, 2045</a>
-                            </div>
-                            <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="">Lorem ipsum dolor
-                                sit amet elit. Proin vitae porta diam...</a>
-                        </div>
-                    </div>
-                    <div class="position-relative overflow-hidden" style="height: 500px;">
-                        <img class="img-fluid h-100" src="img/news-800x500-3.jpg" style="object-fit: cover;">
-                        <div class="overlay">
-                            <div class="mb-2">
-                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                    href="">Business</a>
-                                <a class="text-white" href="">Jan 01, 2045</a>
-                            </div>
-                            <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="">Lorem ipsum dolor
-                                sit amet elit. Proin vitae porta diam...</a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -81,17 +58,15 @@
             </div>
             <div class="owl-carousel news-carousel carousel-item-4 position-relative">
                 @foreach ($featured as $featured_item)
-                {{ dd($featured_item) }}
                     <div class="position-relative overflow-hidden" style="height: 300px;">
-                        <img class="img-fluid h-100" src="img/news-700x435-1.jpg" style="object-fit: cover;">
+                        <img class="img-fluid h-100" src="{{ $featured_item["image_url"] }}" style="object-fit: cover;">
                         <div class="overlay">
                             <div class="mb-2">
                                 <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                    href="">{{ $featured_item["category"] }}</a>
-                                <a class="text-white" href=""><small>Jan 01, 2045</small></a>
+                                    href="">{{ $featured_item["category"] }}</a></br>
+                                <a class="text-white" href=""><small>{{ Carbon\Carbon::parse($featured_item["pub_date"])->format('d/M/Y h:i') }}</small></a>
                             </div>
-                            <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor
-                                sit amet elit...</a>
+                            <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">{{ $featured_item["title"] }}</a>
                         </div>
                     </div>
                 @endforeach
