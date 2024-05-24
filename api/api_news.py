@@ -163,22 +163,23 @@ def get_articles_by_category(category):
         category_articles_list = []
         for article in category_articles:
             article_dict = {
-                "Title": article[0],
-                "Description": article[1],
-                "Source": article[2],
-                "URL": article[3],
-                "Image URL": article[4],
-                "Article ID": article[5],
-                "Creator": article[6],
-                "Video URL": article[7],
-                "Pub Date": article[8],
-                "Source ID": article[9],
-                "Source Priority": article[10],
-                "Source URL": article[11],
-                "Source Icon": article[12],
-                "Language": article[13],
-                "Country": article[14],
-                "Category": article[15]
+                "id": article[0],
+                "title": article[1],
+                "description": article[2],
+                "source": article[3],
+                "url": article[4],
+                "image_url": article[5],
+                "article_id": article[6],
+                "creator": article[7],
+                "video_url": article[8],
+                "pub_date": article[9],
+                "source_id": article[10],
+                "source_priority": article[11],
+                "source_url": article[12],
+                "source_icon": article[13],
+                "language": article[14],
+                "country": article[15],
+                "category": article[16]
             }
             category_articles_list.append(article_dict)
 
