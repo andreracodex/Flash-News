@@ -21,6 +21,7 @@ if missing_requirements:
 
 from flask import Flask, jsonify # type: ignore
 import mysql.connector
+import time
 
 app = Flask(__name__)
 
@@ -38,6 +39,37 @@ db_connection = mysql.connector.connect(
 
 # Create a cursor object to interact with the database
 cursor = db_connection.cursor()
+last_database_state = None
+
+# Define a function to check for database changes
+def check_database_changes():
+    global last_database_state
+    
+    # Query the database to get its current state
+    current_database_state = ...  # Write code to retrieve the current state of the database
+    
+    # Compare current state with the last known state
+    if current_database_state != last_database_state:
+        # If changes are detected, refresh data or notify clients
+        refresh_data()  # Example function to refresh data
+        
+        # Update the last known state with the current state
+        last_database_state = current_database_state
+
+# Define a function to refresh data
+def refresh_data():
+    # Code to refresh data goes here
+    pass
+
+# Define a function to start the polling mechanism
+def start_polling():
+    while True:
+        # Check for database changes
+        check_database_changes()
+        
+        # Sleep for a specific interval before checking again
+        time.sleep(60)  # Check every 60 seconds (adjust as needed)
+
 
 @app.route('/articles', methods=['GET'])
 def get_articles():
@@ -53,22 +85,23 @@ def get_articles():
         articles_list = []
         for article in articles:
             article_dict = {
-                "Title": article[0],
-                "Description": article[1],
-                "Source": article[2],
-                "URL": article[3],
-                "Image URL": article[4],
-                "Article ID": article[5],
-                "Creator": article[6],
-                "Video URL": article[7],
-                "Pub Date": article[8],
-                "Source ID": article[9],
-                "Source Priority": article[10],
-                "Source URL": article[11],
-                "Source Icon": article[12],
-                "Language": article[13],
-                "Country": article[14],
-                "Category": article[15]
+                "id": article[0],
+                "title": article[1],
+                "description": article[2],
+                "source": article[3],
+                "url": article[4],
+                "image_url": article[5],
+                "article_id": article[6],
+                "creator": article[7],
+                "video_url": article[8],
+                "pub_date": article[9],
+                "source_id": article[10],
+                "source_priority": article[11],
+                "source_url": article[12],
+                "source_icon": article[13],
+                "language": article[14],
+                "country": article[15],
+                "category": article[16]
             }
             articles_list.append(article_dict)
 
@@ -77,19 +110,58 @@ def get_articles():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@app.route('/articles/technology', methods=['GET'])
-def get_technology_articles():
+@app.route('/featured', methods=['GET'])
+def get_fatured():
     try:
-        # SQL query to select technology articles from the database
-        sql = "SELECT * FROM tb_beritas WHERE category = 'technology'"
+        # SQL query to select data from the database
+        sql = "SELECT * FROM tb_beritas WHERE is_featured = 1"
         # Execute the SQL query
         cursor.execute(sql)
         # Fetch all rows from the result
-        technology_articles = cursor.fetchall()
+        articles = cursor.fetchall()
 
         # Convert data to a list of dictionaries for JSON response
-        technology_articles_list = []
-        for article in technology_articles:
+        articles_list = []
+        for article in articles:
+            article_dict = {
+                "id": article[0],
+                "title": article[1],
+                "description": article[2],
+                "source": article[3],
+                "url": article[4],
+                "image_url": article[5],
+                "article_id": article[6],
+                "creator": article[7],
+                "video_url": article[8],
+                "pub_date": article[9],
+                "source_id": article[10],
+                "source_priority": article[11],
+                "source_url": article[12],
+                "source_icon": article[13],
+                "language": article[14],
+                "country": article[15],
+                "category": article[16]
+            }
+            articles_list.append(article_dict)
+
+        return jsonify(articles_list)
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/articles/<category>', methods=['GET'])
+def get_articles_by_category(category):
+    try:
+        # SQL query to select articles based on the specified category
+        sql = "SELECT * FROM tb_beritas WHERE category LIKE %s"
+        # Execute the SQL query
+        cursor.execute(sql, (category,))
+        # Fetch all rows from the result
+        category_articles = cursor.fetchall()
+
+        # Convert data to a list of dictionaries for JSON response
+        category_articles_list = []
+        for article in category_articles:
             article_dict = {
                 "Title": article[0],
                 "Description": article[1],
@@ -108,9 +180,9 @@ def get_technology_articles():
                 "Country": article[14],
                 "Category": article[15]
             }
-            technology_articles_list.append(article_dict)
+            category_articles_list.append(article_dict)
 
-        return jsonify(technology_articles_list)
+        return jsonify(category_articles_list)
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -119,5 +191,12 @@ def get_technology_articles():
 def home():
     return "Welcome to the BiNews API!"
 
+
 if __name__ == '__main__':
+    # Start the polling mechanism in a separate thread
+    import threading
+    polling_thread = threading.Thread(target=start_polling)
+    polling_thread.start()
+    
+    # Run the Flask application
     app.run(debug=True)
