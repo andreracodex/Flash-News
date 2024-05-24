@@ -1,12 +1,16 @@
 import subprocess
 import importlib.metadata as metadata
+import sys
+import os
+from dotenv import load_dotenv
+# Load environment variables from .env file
+load_dotenv()
 
 # Read the requirements from requirements.txt
 with open("requirements.txt", "r") as file:
     requirements = [line.strip() for line in file]
 
-# Get the names of installed packages
-installed_packages = [pkg.name for pkg in metadata.distributions()]
+installed_packages = [pkg.metadata['Name'] for pkg in metadata.distributions()]
 
 # Check if each requirement is installed
 missing_requirements = [requirement for requirement in requirements if requirement not in installed_packages]
@@ -60,6 +64,10 @@ import mysql.connector
 def scrape_news(api_key, countries, language, categories):
     url = f"https://newsdata.io/api/1/news?apikey={api_key}&country={countries}&language={language}&category={categories}"
     
+    DB_HOST = os.getenv("DB_HOST")
+    DB_USER = os.getenv("DB_USER")
+    DB_PASSWORD = os.getenv("DB_PASSWORD")
+    DB_NAME = os.getenv("DB_NAME")
     # Fetch the JSON data
     response = requests.get(url)
     
@@ -68,10 +76,10 @@ def scrape_news(api_key, countries, language, categories):
         
         # Establish a connection to MySQL database
         db_connection = mysql.connector.connect(
-            host="localhost",
-            user="andre",
-            password="password",
-            database="binews_db"
+            host=DB_HOST,
+            user=DB_USER,
+            password=DB_PASSWORD,
+            database=DB_NAME
         )
         
         # Create a cursor object to interact with the database

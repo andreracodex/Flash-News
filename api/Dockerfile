@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:3.8-slim
+FROM python:3.9
 
 # Set the working directory in the container
 WORKDIR /app
@@ -8,11 +8,14 @@ WORKDIR /app
 COPY . /app
 
 # Install any needed dependencies specified in requirements.txt
+RUN apt-get update && apt-get install -y mariadb-client
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Make port 80 available to the world outside this container
+# Make port 5000 available to the world outside this container
 EXPOSE 5000
 
 # Define environment variable
 ENV FLASK_APP=api_news.py
 
+# Run app.py when the container launches
+CMD ["flask", "run", "--host=0.0.0.0", "--debug"]
