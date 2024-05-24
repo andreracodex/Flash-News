@@ -13,16 +13,16 @@ return new class extends Migration
     {
         Schema::create('tb_beritas', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->text('title');
             $table->text('description');
-            $table->string('source');
+            $table->text('source');
             $table->text('url');
             $table->text('image_url');
-            $table->string('article_id');
-            $table->string('creator');
+            $table->text('article_id');
+            $table->text('creator')->nullable();
             $table->text('video_url')->nullable();
             $table->timestamp('pub_date')->nullable();
-            $table->unsignedBigInteger('source_id')->nullable();
+            $table->text('source_id')->nullable();
             $table->integer('source_priority')->default(0);
             $table->text('source_url')->nullable();
             $table->text('source_icon')->nullable();
@@ -30,6 +30,7 @@ return new class extends Migration
             $table->string('country')->nullable();
             $table->unsignedBigInteger('category_id')->nullable();
             $table->foreign('category_id')->references('id')->on('tb_categories')->onDelete('cascade')->onUpdate('cascade');
+            $table->text('category')->nullable();
             $table->integer('is_featured')->default(0);
             $table->integer('is_active')->default(1);
             $table->softDeletes();
