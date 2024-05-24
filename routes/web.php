@@ -14,7 +14,7 @@ Route::get('/redaksi', [FrontendController::class, 'redaksi'])->name('redaksi');
 Route::get('/ketentuan', [FrontendController::class, 'ketentuan'])->name('ketentuan');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('backend.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
