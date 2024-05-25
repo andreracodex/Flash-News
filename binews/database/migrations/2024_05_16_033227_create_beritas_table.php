@@ -33,7 +33,6 @@ return new class extends Migration
             $table->text('category')->nullable();
             $table->integer('is_featured')->default(0);
             $table->integer('is_trending')->default(0);
-            $table->integer('is_trending')->default(0);
             $table->integer('is_active')->default(1);
             $table->softDeletes();
         });
